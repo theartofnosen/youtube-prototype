@@ -1,0 +1,730 @@
+// SECTION ALBUM
+
+.playlist {
+  display: flex;
+  align-items: center;
+}
+
+.song-index {
+  font-size: 1.4rem;
+  margin-right: 5rem;
+}
+.single-song {
+  width: 90%;
+  font-size: 1rem;
+  border-bottom: 1px solid var(--color-grey);
+  cursor: pointer;
+}
+.section-album {
+  display: flex;
+  justify-content: flex-end;
+}
+.scroll-list {
+  // z-index: 10;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: $color-tertiary;
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: $color-secondary-dark;
+  }
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 65vh;
+  @include respond(tab-portrait1) {
+    height: 45vh;
+  }
+  @include respond(tab-portrait2) {
+    height: 55vh;
+  }
+}
+
+.album-topics {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border-bottom: 1px solid $color-secondary-dark;
+
+  &__1 {
+    font-size: 0.9rem;
+    border: none;
+    margin-bottom: 0.3rem;
+    background-color: transparent;
+    font-weight: 700;
+    color: $color-secondary-dark;
+
+    @include respond(tab-portrait1) {
+      font-size: 1.2rem;
+      border-bottom: 1px solid gray;
+      margin-bottom: 1rem;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.album-subheading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(tab-portrait1) {
+    margin-top: -1rem;
+  }
+  &__1 {
+    font-size: 0.8rem;
+    color: $color-secondary;
+    margin-bottom: -1.1rem;
+  }
+  &__2 {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  &__btn {
+    border: none;
+    font-size: 1rem;
+    font-weight: 300;
+    font-weight: 500;
+    margin-right: 0.2rem;
+    border-radius: 25px;
+    width: 7rem;
+    padding: 0.5rem;
+    background-color: $color-primary;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+/* ALBUM PLAYLIST */
+
+.album-playlist {
+  transition: 0.5s;
+
+  &__btn {
+    font-size: 0.9rem;
+    font-weight: 200;
+
+    border-radius: 10px;
+    padding: 0.6rem;
+    color: $color-primary;
+  }
+
+  &__play {
+    margin-right: 1rem;
+  }
+  &__img {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 2rem;
+
+    @include respond(tab-portrait1) {
+      margin-left: -2rem;
+    }
+  }
+  &__name {
+    margin-left: -12rem;
+    @include respond(tab-portrait1) {
+      margin-left: 0;
+    }
+    &1 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: -0.9rem;
+    }
+    &2 {
+      font-size: 0.9rem;
+      color: $color-secondary-dark;
+      font-weight: 600;
+    }
+  }
+  &__duration {
+    margin-right: 0.5rem;
+  }
+}
+.album-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29rem;
+  margin-left: 5.6rem;
+  height: 100%;
+
+  @include respond(large-laptop) {
+    margin-left: 50rem;
+  }
+  @include respond(big-laptop) {
+    margin-left: 26rem;
+  }
+  @include respond(laptop-med) {
+    margin-left: 4rem;
+  }
+  @include respond(tab-landscape1) {
+    width: 34rem;
+  }
+  @include respond(tab-landscape2) {
+    width: 29rem;
+  }
+  @include respond(tab-portrait) {
+    margin-left: 10rem;
+    width: 20rem;
+  }
+  @include respond(tab-portrait1) {
+    justify-content: space-around;
+    width: 45rem;
+    margin-left: 6.5rem;
+  }
+  @include respond(tab-portrait2) {
+    width: 42rem;
+  }
+
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $color-tertiary-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $color-secondary;
+  }
+  ::-webkit-scrollbar-button {
+    color: #ddd; /* Background color for buttons */
+    height: 16px; /* Height for the buttons */
+    width: 12px;
+  }
+}
+
+.scrollable-tabs-container {
+  @include respond(tab-portrait1) {
+    display: none;
+  }
+  &__ul {
+    width: 350px;
+    margin-left: -1.2rem;
+    list-style: none;
+    display: flex;
+    gap: 1.8rem;
+    padding: 12px 24px;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+    overflow-x: scroll;
+  }
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $color-tertiary-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $color-secondary;
+  }
+  ::-webkit-scrollbar-button {
+    color: #ddd; /* Background color for buttons */
+    height: 16px; /* Height for the buttons */
+    width: 12px;
+  }
+  &__l:not(:first-child) {
+    font-size: 1rem;
+    background-color: $color-tertiary;
+    padding: 0.5rem;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+    }
+  }
+  &__a {
+    text-decoration: none;
+    color: $color-primary;
+    display: inline-block;
+    white-space: no-wrap;
+    border-radius: 4px;
+  }
+}
+.active {
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: $color-primary;
+  color: $color-tertiary;
+}
+
+.lyrics {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 65vh;
+  width: 21rem;
+  padding-right: 4rem;
+  cursor: pointer;
+
+  @include respond(tab-portrait1) {
+    height: 45vh;
+  }
+  @include respond(tab-portrait2) {
+    height: 55vh;
+  }
+}
+.lyrics p {
+  font-size: 1rem;
+}
+.related {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 65vh;
+
+  @include respond(tab-portrait1) {
+    height: 45vh;
+  }
+  @include respond(tab-portrait2) {
+    height: 55vh;
+  }
+}
+
+.related-scroll {
+  width: 350px;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  overflow-x: scroll;
+}
+.related-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.related-div2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+.related-album {
+  &__ul {
+    margin-left: -1rem;
+  }
+
+  &__li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1.2rem;
+    margin-bottom: -0.8rem;
+
+    &:hover {
+      background: linear-gradient(
+        to right,
+        $color-secondary,
+        $color-secondary-dark
+      );
+    }
+  }
+
+  &__img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  &__name {
+    width: 8rem;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    &1 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: -1rem;
+    }
+
+    &2 {
+      font-size: 0.8rem;
+      color: $color-secondary-dark;
+      font-weight: 600;
+    }
+  }
+}
+.heading {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  max-width: 25rem;
+
+  @include respond(big-laptop) {
+    display: none;
+    margin-top: 1rem;
+  }
+  @include respond(tab-portrait) {
+    margin-top: 0;
+  }
+  @include respond(tab-portrait1) {
+    margin-top: -2rem;
+  }
+  @include respond(tab-portrait2) {
+    margin-top: -0.5rem;
+  }
+  @include respond(phone) {
+    position: absolute;
+    background: black;
+    max-width: 32.8rem;
+    pointer-events: none;
+    width: 100%;
+    bottom: -100%;
+    opacity: 0;
+    left: 0;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5000;
+    transition: all 0.15s ease-in-out;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background-blend-mode: screen;
+  }
+  @include respond(phone-large) {
+    width: 90%;
+  }
+  @include respond(phone-small) {
+    width: 80%;
+  }
+  @include respond(phone-smallest) {
+    width: 70%;
+  }
+}
+
+.see {
+  bottom: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+.see2 {
+  opacity: 1;
+}
+.tabs__label {
+  padding: 18px 16px;
+  cursor: pointer;
+}
+.tabs__radio {
+  display: none;
+}
+.tabs__content {
+  order: 1;
+  width: 100%;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  display: none;
+}
+.tabs__radio:checked + .tabs__label {
+  font-weight: bold;
+  color: $color-primary;
+  border-bottom: 3px solid $color-primary;
+}
+.tabs__radio:checked + .tabs__label + .tabs__content {
+  display: initial;
+}
+
+.others__ul {
+  list-style: none;
+}
+.others__img {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+.others2__img {
+  border: 15px;
+  width: 10rem;
+  height: 10rem;
+}
+.others__text {
+  text-align: center;
+  &1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: -1rem;
+    color: $color-primary;
+  }
+
+  &2 {
+    font-size: 0.9rem;
+    color: $color-secondary;
+    font-weight: 300;
+  }
+}
+.others2__text {
+  &1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: -1rem;
+    color: $color-primary;
+  }
+
+  &2 {
+    font-size: 0.9rem;
+    color: $color-secondary;
+    font-weight: 300;
+  }
+}
+.others {
+  width: 390px;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+}
+.others2 {
+  width: 390px;
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.others-div {
+  display: inline-block;
+}
+.others2-div {
+  display: inline-block;
+}
+.related-3 {
+  margin-top: 5rem;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.04);
+    margin-left: 2rem;
+  }
+  &__txt {
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    margin-left: -2rem;
+  }
+}
+.about {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  &__txt {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.others {
+  transform: translateX(0);
+}
+//
+.main {
+  display: none;
+}
+
+.main button {
+  color: $color-primary;
+}
+.main_btns {
+  display: flex;
+  justify-content: space-around;
+}
+.top_bar .show2 {
+  transform: translateY(0px);
+}
+
+.top_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.top_bar button {
+  // z-index: 20;
+  height: 60px;
+  width: 60px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border-bottom: 1px solid $color-primary;
+}
+
+//
+.words span {
+  padding: 1rem;
+  width: 400px;
+  font-size: 1.7rem;
+}
+
+#about {
+  width: 300px;
+}
+.p__img {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.list,
+.relate,
+.words {
+  position: absolute;
+  bottom: 0;
+  // z-index: 10;
+  background-color: black;
+  width: 100%;
+  max-height: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.show {
+  max-height: 100vh;
+  padding: 100px 0 0 0;
+}
+
+.list .p_song {
+  position: relative;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  transition: 0.5s;
+  padding: 12px 12px 20px 12px;
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.1);
+}
+.p {
+  display: block;
+}
+
+.list .p_song:not(:first-child) {
+  margin-top: 20px;
+}
+.list .p_song #p_title {
+  font-size: 20px;
+}
+.list .p_song #p_artist {
+  position: absolute;
+  bottom: 15px;
+
+  font-size: 11px;
+}
+
+.list .p_song button,
+.related-btn {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  margin: 0 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.list .p_song:hover {
+  background: linear-gradient(to right, $color-tertiary, $color-tertiary-dark);
+}
+.list .p_song:hover button {
+  background: $color-secondary;
+}
+.main .active_song {
+  background: linear-gradient(
+    to right,
+    $color-secondary,
+    $color-secondary-dark
+  );
+
+  box-shadow: none;
+}
+
+.list .active_song button {
+  background: $color-tertiary;
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+    0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+//PLaylist//
+.playlist-div button,
+#pause2 {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  margin: 0 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    $color-secondary,
+    $color-secondary-dark
+  );
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+.playlist-div li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-secondary-dark;
+  cursor: pointer;
+  margin-left: -4rem;
+  transition: 0.5s;
+
+  @include respond(tab-portrait1) {
+    justify-content: space-around;
+    margin-left: 0;
+    margin-right: 0;
+    width: 26rem;
+  }
+  &:hover {
+    transform: scale(0.95);
+    background: linear-gradient(to left, $color-tertiary, $color-tertiary-dark);
+    box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+      0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+//
+.change {
+  transform: scale(0.95);
+
+  background: linear-gradient(to right, $color-tertiary, $color-tertiary-dark);
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+    0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
