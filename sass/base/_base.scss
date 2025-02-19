@@ -1,0 +1,85 @@
+body {
+  overflow: hidden;
+  background-color: $color-tertiary-dark;
+  font-family: "Reddit Sans Condensed", sans-serif;
+  color: $color-primary;
+}
+html {
+  @include respond(phone) {
+    overflow: hidden;
+  }
+}
+.grid-test {
+  @include respond(big-laptop) {
+    height: 60vh;
+  }
+  @include respond(tab-landscape2) {
+    height: 69.5vh;
+  }
+  @include respond(tab-portrait1) {
+    height: 78vh;
+  }
+  @include respond(tab-portrait2) {
+    height: 90vh;
+  }
+}
+.row {
+  width: 100%;
+  margin: 0 auto;
+  content: "";
+  display: table;
+  clear: both;
+}
+.header {
+  position: relative;
+  height: 80vh;
+}
+.add {
+  margin-bottom: 2rem;
+
+  @include respond(tab-landscape2) {
+    margin-bottom: 0;
+  }
+}
+.col-1-of-2 {
+  width: calc((100% - #{$gutter-horizontal}) / 2);
+  float: left;
+
+  &:not(:last-child) {
+    margin-right: $gutter-horizontal;
+  }
+  @include respond(big-laptop) {
+    width: calc((100% - 0.1rem) / 2);
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+    height: 83vh;
+    padding: 0;
+  }
+  @include respond(tab-landscape1) {
+    width: calc((100% - 7rem) / 2);
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+
+    height: 68vh;
+  }
+  @include respond(tab-landscape2) {
+    width: calc((100% - 8rem) / 2);
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+
+    height: 68vh;
+  }
+
+  @include respond(tab-portrait1) {
+    height: 50vh;
+  }
+  @include respond(tab-portrait) {
+    height: 50vh;
+  }
+}
+.scroll-bar-2 {
+  height: 50%;
+}

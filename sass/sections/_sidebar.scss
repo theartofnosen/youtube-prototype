@@ -1,0 +1,412 @@
+/* SIDEBAR */
+
+.sidebar {
+  border-right: 1px solid $color-secondary-dark;
+  width: 200px;
+  height: 80vh;
+  flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include respond(tab-portrait1) {
+    width: 75px;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+
+    @include respond(phone) {
+      border-right: none;
+    }
+    .side-nav {
+      border-bottom: none;
+
+      @include respond(phone) {
+        opacity: 0;
+        margin-top: 9rem;
+      }
+      @include respond(phone-small) {
+        opacity: 0;
+        margin-top: 5rem;
+      }
+    }
+    .side-nav__icon {
+      margin-left: 0.5rem;
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+    .side-nav__item:before {
+      left: -5%;
+    }
+    .side-nav__item:hover:before {
+      width: 94%;
+    }
+    .side-list {
+      font-size: 0.9rem;
+    }
+    .bottom-content {
+      opacity: 0;
+    }
+
+    .album-topics__1 {
+      font-size: 1rem;
+    }
+  }
+
+  @include respond(tab-portrait1) {
+    .responsive {
+      top: 15%;
+      left: 27%;
+      width: 30rem;
+      height: 30rem;
+    }
+  }
+
+  @include respond(tab-portrait2) {
+    .responsive {
+      top: 20%;
+      left: 28%;
+      width: 26rem;
+      height: 26rem;
+    }
+  }
+  @include respond(phone) {
+    .responsive {
+      top: 20%;
+      left: 19.5%;
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+  @include respond(phone-large) {
+    .responsive {
+      top: 20%;
+      left: 12%;
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+  @include respond(phone-medium) {
+    .responsive {
+      top: 20%;
+      left: 12%;
+      width: 18rem;
+      height: 18rem;
+    }
+  }
+  @include respond(phone-small) {
+    .responsive {
+      top: 25%;
+      left: 17%;
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+  @include respond(phone-smallest) {
+    .responsive {
+      top: 25%;
+      left: 18%;
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+  .sidebar__button {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+.sidebar__close {
+  width: 75px;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(tab-portrait2) {
+    width: 110px;
+    height: 80vh;
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @include respond(tab-portrait1) {
+    border-right: 1px solid $color-secondary-dark;
+    width: 130px;
+    height: 100vh;
+  }
+  @include respond(phone) {
+    border-right: 0;
+    width: 150px;
+    height: 80vh;
+    flex: 0 0 18%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bottom-content {
+    width: 80px;
+    opacity: 0;
+  }
+  .side-list {
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  .album-topics__1 {
+    font-size: 1rem;
+  }
+
+  .responsive {
+    top: 25%;
+    left: 22%;
+    width: 390px;
+    height: 390px;
+
+    @include respond(big-laptop) {
+      top: 17%;
+      left: 11%;
+      width: 580px;
+      height: 580px;
+    }
+    @include respond(tab-landscape1) {
+      top: 17%;
+      left: 10%;
+      width: 560px;
+      height: 560px;
+    }
+    @include respond(tab-landscape2) {
+      top: 20%;
+      left: 15%;
+      width: 350px;
+      height: 350px;
+    }
+    @include respond(tab-portrait) {
+      top: 15%;
+      left: 15%;
+      width: 20rem;
+      height: 20rem;
+    }
+    @include respond(tab-portrait1) {
+      top: 15%;
+      left: 27%;
+      width: 30rem;
+      height: 30rem;
+    }
+
+    @include respond(phone) {
+      top: 20%;
+      left: 19.5%;
+      width: 20rem;
+      height: 20rem;
+    }
+    @include respond(phone-large) {
+      top: 20%;
+      left: 14%;
+      width: 22rem;
+      height: 22rem;
+    }
+    @include respond(phone-medium) {
+      top: 20%;
+      left: 16%;
+      width: 18rem;
+      height: 18rem;
+    }
+    @include respond(phone-small) {
+      top: 25%;
+      left: 17%;
+      width: 15rem;
+      height: 15rem;
+    }
+    @include respond(phone-smallest) {
+      top: 25%;
+      left: 18%;
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+
+  .side-nav {
+    @include respond(tab-portrait2) {
+      margin-left: -3.5rem;
+    }
+
+    @include respond(phone) {
+      opacity: 1;
+      z-index: 3;
+      width: 50%;
+      margin-left: -7rem;
+    }
+    @include respond(phone-large) {
+      width: 20%;
+      margin-left: -11rem;
+    }
+    border-bottom: none;
+    &__icon {
+      margin-left: 0.6rem;
+    }
+  }
+}
+
+.side-nav {
+  margin-left: -2.2rem;
+  border-bottom: 1px solid $color-secondary-dark;
+  display: inline-block;
+
+  &__item {
+    list-style: none;
+    position: relative;
+    padding: 0.5rem;
+    font-weight: 900;
+    margin-bottom: 0.7rem;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1px;
+      background: linear-gradient(
+        to right,
+        $color-secondary,
+        $color-secondary-dark
+      );
+      box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      transform: scaleY(0);
+      transition: transform 0.2s, width 0.3s 0.3s;
+    }
+
+    &:hover:before {
+      transform: scaleY(1);
+      width: 92%;
+      @include respond(tab-portrait2) {
+        width: 96%;
+      }
+    }
+    &--active:before {
+      background: linear-gradient(
+        to right,
+        $color-tertiary,
+        $color-tertiary-dark
+      );
+      box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+      transform: scaleY(1);
+      width: 92%;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-primary;
+    position: relative;
+    // z-index: 10;
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    fill: $color-primary;
+    background: none;
+  }
+
+  &__extra {
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -0.5rem;
+      height: 100%;
+      width: 1px;
+      border-radius: 4px;
+      background: linear-gradient(
+        to right,
+        $color-secondary,
+        $color-secondary-dark
+      );
+      box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+        0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      transform: scaleY(0);
+      transition: transform 1s;
+      transition: transform 0.2s, width 0.3s 0.3s;
+    }
+    &:hover:before {
+      transform: scaleY(1);
+      width: 173%;
+    }
+  }
+
+  &__txt1 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    // z-index: 10;
+  }
+  &__txt2 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: $color-secondary-dark;
+    position: relative;
+    // z-index: 10;
+  }
+}
+.side-list {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-decoration: none;
+  list-style: none;
+}
+
+//  PLAYLIST
+.playlist {
+  margin-left: 0.6rem;
+  display: inline-block;
+}
+.playlist-word {
+  color: $color-primary;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.playlist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, $color-tertiary, $color-tertiary-dark);
+  box-shadow: 0.1px 8px 8px 2px rgba(0, 0, 0, 0.2) inset,
+    0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
+  padding: 0.35rem;
+  width: 12rem;
+  border-radius: 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin-top: -5rem;
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      $color-secondary,
+      $color-secondary-dark
+    );
+  }
+}
+
+.plus__icon {
+  fill: $color-primary;
+  background: none;
+  stroke-width: 10;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.push__icon {
+  fill: $color-secondary-dark;
+  width: 0.7rem;
+  height: 0.7rem;
+}

@@ -1,0 +1,45 @@
+.responsive {
+  position: absolute;
+  top: 23.5%;
+  right: 46%;
+  transition: all 7s ease-out infinite;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.1);
+
+  @include respond(big-laptop) {
+    top: 27%;
+    right: 43.5%;
+    width: 500px;
+    height: 500px;
+  }
+  @include respond(tab-landscape1) {
+    width: 350px;
+    height: 350px;
+  }
+  @include respond(tab-landscape2) {
+    top: 27%;
+    right: 47%;
+    width: 300px;
+    height: 300px;
+  }
+  @include respond(tab-portrait) {
+    width: 250px;
+    height: 250px;
+    right: 46%;
+  }
+  @include respond(tab-portrait2) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.responsive::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
